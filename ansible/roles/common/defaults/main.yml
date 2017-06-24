@@ -1,0 +1,3 @@
+hosts: [
+  { host_ip: "10.100.198.200", host_name: "ft-cd"}
+]
