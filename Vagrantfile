@@ -7,7 +7,7 @@ Vagrant.configure(2) do |config|
     config.vm.synced_folder ".", "/vagrant"
   end
   config.vm.define "ft-cd" do |d|
-    d.vm.box = "ubuntu/trusty64"
+    d.vm.box = "centos/7"
     d.vm.hostname = "ft-cd"
     d.vm.network "private_network", ip: "10.100.199.200"
     d.vm.provision :shell, path: "scripts/bootstrap_ansible.sh"

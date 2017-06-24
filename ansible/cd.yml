@@ -5,6 +5,4 @@
     - common
     - docker
     - docker-compose
-    - docker-flow
-    - consul-template
-    - registry
+    - mongodb

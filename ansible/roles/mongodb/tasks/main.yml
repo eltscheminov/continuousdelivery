@@ -5,6 +5,13 @@
   with_items: "{{ centos_files }}"
   tags: [mongodb]
 
+- name: Creates mongo data directory
+  file:
+    path: /data/db
+    state: directory
+    mode: 0755
+  tags: [mongodb]
+
 - name: CentOS package is installed
   yum:
     name: mongodb-org
@@ -13,6 +20,7 @@
 
 - name: CentOS service is running
   service:
-    name: docker
+    name: mongod
+    enabled: yes
     state: running
   tags: [mongodb]
