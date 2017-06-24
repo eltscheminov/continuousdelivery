@@ -1,0 +1,18 @@
+- name: CentOS files are copied
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items: "{{ centos_files }}"
+  tags: [mongodb]
+
+- name: CentOS package is installed
+  yum:
+    name: mongodb-org
+    state: present
+  tags: [mongodb]
+
+- name: CentOS service is running
+  service:
+    name: docker
+    state: running
+  tags: [mongodb]
